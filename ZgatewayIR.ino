@@ -398,7 +398,7 @@ void IRtoMQTT(){
     #ifdef IR_GICABLE
     if (strstr(topicOri, "IR_GICABLE") != NULL){
       if (valueBITS == 0) valueBITS = GICABLE_BITS;
-      if (valueRPT == 0) valueRPT = std::max(valueRPT, (uint16_t) GICABLE_MIN_REPEAT);
+      if (valueRPT == 0) valueRPT = std::max(valueRPT, kGicableMinRepeat);
       irsend.sendGICable(data, valueBITS, valueRPT);
       signalSent = true;
     }
@@ -406,7 +406,7 @@ void IRtoMQTT(){
     #ifdef IR_SHERWOOD
     if (strstr(topicOri, "IR_SHERWOOD") != NULL){
       if (valueBITS == 0) valueBITS = SHERWOOD_BITS;
-      if (valueRPT == 0) valueRPT = std::max(valueRPT, (uint16_t) SHERWOOD_MIN_REPEAT);
+      if (valueRPT == 0) valueRPT = std::max(valueRPT, kSherwoodMinRepeat);
       irsend.sendSherwood(data, valueBITS, valueRPT);
       signalSent = true;
     }
@@ -414,7 +414,7 @@ void IRtoMQTT(){
     #ifdef IR_MITSUBISHI
     if (strstr(topicOri, "IR_MITSUBISHI") != NULL){
       if (valueBITS == 0) valueBITS = MITSUBISHI_BITS;
-      if (valueRPT == 0) valueRPT = std::max(valueRPT, (uint16_t) MITSUBISHI_MIN_REPEAT);
+      if (valueRPT == 0) valueRPT = std::max(valueRPT, kMitsubishiMinRepeat);
       irsend.sendMitsubishi(data, valueBITS, valueRPT);
       signalSent = true;
     }
@@ -457,7 +457,7 @@ void IRtoMQTT(){
     #ifdef IR_MITSUBISHI2
     if (strstr(topicOri, "IR_MITSUBISHI2") != NULL){
       if (valueBITS == 0) valueBITS = MITSUBISHI_BITS;
-      if (valueRPT == 0) valueRPT = std::max(valueRPT, (uint16_t) MITSUBISHI_MIN_REPEAT);
+      if (valueRPT == 0) valueRPT = std::max(valueRPT, kMitsubishiMinRepeat);
       irsend.sendMitsubishi2(data, valueBITS, valueRPT);
       signalSent = true;
     }
@@ -465,7 +465,7 @@ void IRtoMQTT(){
     #ifdef IR_AIWA_RC_T501
     if (strstr(topicOri, "IR_MITSUBISHI") != NULL){
       if (valueBITS == 0) valueBITS = AIWA_RC_T501_BITS;
-      if (valueRPT == 0) valueRPT = std::max(valueRPT, (uint16_t) AIWA_RC_T501_MIN_REPEAT);
+      if (valueRPT == 0) valueRPT = std::max(valueRPT, kAiwaRcT501MinRepeats);
       irsend.sendAiwaRCT501(data, valueBITS, valueRPT);
       signalSent = true;
     }
@@ -696,7 +696,7 @@ void IRtoMQTT(){
           #ifdef IR_GICABLE
           if (strstr(protocol_name, "IR_GICABLE") != NULL){
           if (valueBITS == 0) valueBITS = GICABLE_BITS;
-          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, (uint16_t) GICABLE_MIN_REPEAT);
+          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, kGicableMinRepeat);
           irsend.sendGICable(data, valueBITS, valueRPT);
           signalSent = true;
           }
@@ -704,7 +704,7 @@ void IRtoMQTT(){
           #ifdef IR_SHERWOOD
           if (strstr(protocol_name, "IR_SHERWOOD") != NULL){
           if (valueBITS == 0) valueBITS = SHERWOOD_BITS;
-          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, (uint16_t) SHERWOOD_MIN_REPEAT);
+          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, kSherwoodMinRepeat);
           irsend.sendSherwood(data, valueBITS, valueRPT);
           signalSent = true;
           }
@@ -712,7 +712,7 @@ void IRtoMQTT(){
           #ifdef IR_MITSUBISHI
           if (strstr(protocol_name, "IR_MITSUBISHI") != NULL){
           if (valueBITS == 0) valueBITS = MITSUBISHI_BITS;
-          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, (uint16_t) MITSUBISHI_MIN_REPEAT);
+          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, kMitsubishiMinRepeat);
           irsend.sendMitsubishi(data, valueBITS, valueRPT);
           signalSent = true;
           }
@@ -755,7 +755,7 @@ void IRtoMQTT(){
           #ifdef IR_MITSUBISHI2
           if (strstr(protocol_name, "IR_MITSUBISHI2") != NULL){
           if (valueBITS == 0) valueBITS = MITSUBISHI_BITS;
-          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, (uint16_t) MITSUBISHI_MIN_REPEAT);
+          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, kMitsubishiMinRepeat);
           irsend.sendMitsubishi2(data, valueBITS, valueRPT);
           signalSent = true;
           }
@@ -763,7 +763,7 @@ void IRtoMQTT(){
           #ifdef IR_AIWA_RC_T501
           if (strstr(protocol_name, "IR_MITSUBISHI") != NULL){
           if (valueBITS == 0) valueBITS = AIWA_RC_T501_BITS;
-          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, (uint16_t) AIWA_RC_T501_MIN_REPEAT);
+          if (valueRPT == repeatIRwNumber) valueRPT = std::max(valueRPT, kAiwaRcT501MinRepeats);
           irsend.sendAiwaRCT501(data, valueBITS, valueRPT);
           signalSent = true;
           }
