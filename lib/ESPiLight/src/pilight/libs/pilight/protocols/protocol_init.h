@@ -31,7 +31,7 @@ mumbiInit();
 ninjablocksWeatherInit();
 pollinInit();
 quiggGT1000Init();
-quiggGT7000Init();
+oregon_21WeatherInit();
 quiggGT9000Init();
 quiggScreenInit();
 rc101Init();

@@ -1,3 +1,6 @@
+#ifndef _USERCONFIG_H_
+#define _USERCONFIG_H_
+
 /*  
   OpenMQTTGateway  - ESP8266 or Arduino program for home automation 
 
@@ -50,24 +53,10 @@
   //#define ESPWifiManualSetup true //uncomment you don't want to use wifimanager for your credential settings on ESP
 #endif
 
-#if defined(ESP32) || defined(ESPWifiManualSetup) // for nodemcu, weemos and esp8266
-  #define wifi_ssid "wifi ssid"
-  #define wifi_password "wifi password"
-#else // for arduino + W5100
-  const byte mac[] = {  0xDE, 0xED, 0xBA, 0xFE, 0x54, 0x95 }; //W5100 ethernet shield mac adress
-#endif
-
-#define WifiManager_password "your_password" //this is going to be the WPA2-PSK password for the initial setup access point 
-#define WifiManager_ssid "OpenMQTTGateway" //this is the network name of the initial setup access point
+#define WifiManager_password "19821985" //this is going to be the WPA2-PSK password for the initial setup access point 
+#define WifiManager_ssid "mtn-volmart" //this is the network name of the initial setup access point
 #define WifiManager_ConfigPortalTimeOut 120
 
-/*-------------DEFINE YOUR MQTT PARAMETERS BELOW----------------*/
-//MQTT Parameters definition
-//#define mqtt_server_name "www.mqtt_broker.com" // instead of defining the server by its IP you can define it by its name, uncomment this line and set the correct MQTT server host name
-char mqtt_user[20] = "your_username"; // not compulsory only if your broker needs authentication
-char mqtt_pass[30] = "your_password"; // not compulsory only if your broker needs authentication
-char mqtt_server[40] = "192.168.1.17";
-char mqtt_port[6] = "1883";
 
 #define Gateway_Name "OpenMQTTGateway"
 
@@ -77,12 +66,12 @@ char mqtt_port[6] = "1883";
 /*-------------DEFINE THE MODULES YOU WANT BELOW----------------*/
 //Addons and module management, comment the Z line
 
-#define ZgatewayRF     "RF"       //ESP8266, Arduino, ESP32
+//#define ZgatewayRF     "RF"       //ESP8266, Arduino, ESP32
 //#define ZgatewayRF315  "RF315"    //ESP8266, Arduino, ESP32
-#define ZgatewayIR     "IR"       //ESP8266, Arduino,         Sonoff RF Bridge
-//#define ZgatewayPilight "Pilight" //ESP8266, Arduino, ESP32
-#define ZgatewayBT     "BT"       //ESP8266, Arduino, ESP32
-//#define ZgatewayRF2    "RF2"      //ESP8266, Arduino, ESP32
+//#define ZgatewayIR     "IR"       //ESP8266, Arduino,         Sonoff RF Bridge
+#define ZgatewayPilight "Pilight" //ESP8266, Arduino, ESP32
+//#define ZgatewayBT     "BT"       //ESP8266, Arduino, ESP32
+//#define ZgatewayRF2    "RF2"        //ESP8266, Arduino, ESP32
 //#define ZgatewaySRFB   "SRFB"     //                          Sonoff RF Bridge
 //#define Zgateway2G     "2G"       //ESP8266, Arduino, ESP32
 //#define ZgatewayRFM69  "RFM69"    //ESP8266, Arduino, ESP32
@@ -104,12 +93,6 @@ char mqtt_port[6] = "1883";
 
 //set minimum quality of signal so it ignores AP's under that quality
 #define MinimumWifiSignalQuality 8
-
-// these values are only used if no dhcp configuration is available
-const byte ip[] = { 192, 168, 1, 99 }; //ip adress
-const byte gateway[] = { 0, 0, 0, 0 }; //ip adress, if first value is different from 0 advanced config network will be used and you should fill gateway & dns
-const byte Dns[] = { 0, 0, 0, 0 }; //ip adress, if first value is different from 0 advanced config network will be used and you should fill gateway & dns
-const byte subnet[] = { 255, 255, 255, 0 }; //ip adress
 
 /*-------------DEFINE YOUR MQTT ADVANCED PARAMETERS BELOW----------------*/
 #define Base_Topic "home/"
@@ -172,3 +155,5 @@ const byte subnet[] = { 255, 255, 255, 0 }; //ip adress
 
 /*-------------------ACTIVATE TRACES----------------------*/
 #define TRACE 1  // commented =  trace off, uncommented = trace on
+
+#endif

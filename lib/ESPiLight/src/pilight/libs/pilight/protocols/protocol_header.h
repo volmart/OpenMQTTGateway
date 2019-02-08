@@ -31,7 +31,7 @@
 #include "433.92/ninjablocks_weather.h"
 #include "433.92/pollin.h"
 #include "433.92/quigg_gt1000.h"
-#include "433.92/quigg_gt7000.h"
+#include "433.92/oregon_21.h"
 #include "433.92/quigg_gt9000.h"
 #include "433.92/quigg_screen.h"
 #include "433.92/rc101.h"
